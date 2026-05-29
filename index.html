@@ -1,276 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nadia Cecil | Cybersecurity Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia Cecil | Cybersecurity Portfolio</title>
 
-    body {
-      background: #020617;
-      color: #f8fafc;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 60px 10%;
-      text-align: center;
-      background: linear-gradient(135deg, #020617, #1e1b4b, #312e81);
-    }
-
-    header h1 {
-      font-size: 45px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      color: #cbd5e1;
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
-
- .btn {
-    padding: 8px 14px;
-    margin-right: 10px;
-    background: #00bcd4;
-    color: black;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-    .btn:hover {
-      background: #1d4ed8;
-    }
-
-    section {
-      padding: 50px 10%;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      color: #60a5fa;
-    }
-
-    .about {
-      background: #0f172a;
-      border-radius: 16px;
-      padding: 25px;
-      color: #dbeafe;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .skill {
-      background: #1e293b;
-      color: #bfdbfe;
-      padding: 10px 14px;
-      border-radius: 20px;
-      border: 1px solid #334155;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: 16px;
-      padding: 24px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: #3b82f6;
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
-    }
-
-    .card h3 {
-      color: #93c5fd;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      margin-bottom: 12px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #1e3a8a;
-      color: #dbeafe;
-      padding: 5px 9px;
-      margin: 4px 3px 0 0;
-      border-radius: 12px;
-      font-size: 13px;
-    }
-
-    .coming {
-      opacity: 0.75;
-      border-style: dashed;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #020617;
-      color: #94a3b8;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 34px;
-      }
-
-      section {
-        padding: 40px 6%;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <h1>Nadia Cecil</h1>
-    <p>Cybersecurity Student | Web Developer | Security Projects</p>
-    <a class="btn" href="https://github.com/nadiacec054" target="_blank">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/nadia-cecil-2502162a7/" target="_blank">LinkedIn</a>
-    <a class="btn" href="mailto:nadiacecil@gmail.com">Email Me</a>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <div class="about">
-      <p>
-        I am a Computer Science student specializing in Cyber Security. I am interested in
-        secure software development, authentication systems, cryptography, web security,
-        digital forensics, and security monitoring. I enjoy building practical projects that
-        combine cybersecurity concepts with clean and usable web interfaces.
-      </p>
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div id="boot-text"></div>
     </div>
-  </section>
 
-  <section>
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill">Python</span>
-      <span class="skill">Java</span>
-      <span class="skill">C</span>
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">Flask</span>
-      <span class="skill">SQLite</span>
-      <span class="skill">Git & GitHub</span>
-      <span class="skill">Wireshark</span>
-      <span class="skill">Nmap</span>
-      <span class="skill">Suricata IDS</span>
-      <span class="skill">Cryptography</span>
-      <span class="skill">Web Security</span>
+    <!-- Main Terminal -->
+    <div id="terminal-container" class="hidden">
+
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+
+            <div class="terminal-title">
+                nadia@portfolio:~
+            </div>
+        </div>
+
+        <div class="terminal-body">
+
+            <div class="hero">
+
+                <div class="prompt">
+                    <span class="green-text">nadia@portfolio:~$</span>
+                    <span id="typing-line"></span>
+                    <span class="cursor">█</span>
+                </div>
+
+                <div class="intro hidden-section" id="intro">
+
+                    <h1>Nadia Cecil</h1>
+
+                    <p>
+                        Cybersecurity Student • Python Developer • Security Enthusiast
+                    </p>
+
+                    <div class="command-buttons">
+
+                        <button onclick="showSection('about')">
+                            about
+                        </button>
+
+                        <button onclick="showSection('skills')">
+                            skills
+                        </button>
+
+                        <button onclick="showSection('projects')">
+                            projects
+                        </button>
+
+                        <button onclick="showSection('coursework')">
+                            coursework
+                        </button>
+
+                        <button onclick="showSection('contact')">
+                            contact
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ABOUT -->
+
+            <section id="about" class="content-section">
+
+                <div class="terminal-command">
+                    nadia@portfolio:~$ about
+                </div>
+
+                <div class="terminal-output">
+
+                    <p>Name: Nadia Cecil</p>
+
+                    <p>
+                        Computer Science student specializing in Cyber Security.
+                    </p>
+
+                    <br>
+
+                    <p>Interests:</p>
+
+                    <ul>
+                        <li>Cybersecurity</li>
+                        <li>Digital Forensics</li>
+                        <li>Cryptography</li>
+                        <li>Web Security</li>
+                        <li>Python Development</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- SKILLS -->
+
+            <section id="skills" class="content-section">
+
+                <div class="terminal-command">
+                    nadia@portfolio:~$ skills
+                </div>
+
+                <div class="terminal-output">
+
+                    <div class="skill-line">
+                        Python ██████████
+                    </div>
+
+                    <div class="skill-line">
+                        Java █████████
+                    </div>
+
+                    <div class="skill-line">
+                        Flask ████████
+                    </div>
+
+                    <div class="skill-line">
+                        SQL ███████
+                    </div>
+
+                    <div class="skill-line">
+                        Cybersecurity █████████
+                    </div>
+
+                    <div class="skill-line">
+                        Linux ███████
+                    </div>
+
+                    <div class="skill-line">
+                        Docker ██████
+                    </div>
+
+                    <div class="skill-line">
+                        Wireshark ████████
+                    </div>
+
+                    <div class="skill-line">
+                        Nmap ████████
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROJECTS -->
+
+            <section id="projects" class="content-section">
+
+                <div class="terminal-command">
+                    nadia@portfolio:~$ projects
+                </div>
+
+                <div class="terminal-output">
+
+                    <!-- SCANX -->
+
+                    <div class="project-card">
+
+                        <h3>ScanX</h3>
+
+                        <p>
+                            Web Vulnerability Assessment Platform
+                        </p>
+
+                        <ul>
+                            <li>Security Header Analysis</li>
+                            <li>HTTPS Validation</li>
+                            <li>Cookie Security Checks</li>
+                            <li>Risk Scoring</li>
+                            <li>PDF Report Generation</li>
+                        </ul>
+
+                        <div class="project-links">
+
+                            <a href="https://scanx-b7tk.onrender.com" target="_blank">
+                                Live Demo
+                            </a>
+
+                            <a href="https://github.com/nadiacec054/scanX" target="_blank">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- STEGOSEND -->
+
+                    <div class="project-card">
+
+                        <h3>StegoSend</h3>
+
+                        <p>
+                            Secure steganography application for hidden communication.
+                        </p>
+
+                        <div class="project-links">
+
+                            <a href="#">
+                                Live Demo
+                            </a>
+
+                            <a href="#">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BLOCKCHAIN -->
+
+                    <div class="project-card">
+
+                        <h3>Blockchain Library Management</h3>
+
+                        <p>
+                            Blockchain-based library management system.
+                        </p>
+
+                        <div class="project-links">
+
+                            <a href="#">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PASSWORD -->
+
+                    <div class="project-card">
+
+                        <h3>Password Strength Checker</h3>
+
+                        <p>
+                            Security-focused password analysis tool.
+                        </p>
+
+                        <div class="project-links">
+
+                            <a href="#">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- COURSEWORK -->
+
+            <section id="coursework" class="content-section">
+
+                <div class="terminal-command">
+                    nadia@portfolio:~$ coursework
+                </div>
+
+                <div class="terminal-output">
+
+                    <ul>
+                        <li>Cyber Security</li>
+                        <li>Cryptography</li>
+                        <li>Digital Forensics</li>
+                        <li>Computer Networks</li>
+                        <li>Operating Systems</li>
+                        <li>Web Security</li>
+                        <li>Authentication & Access Control</li>
+                        <li>Computational Intelligence</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- CONTACT -->
+
+            <section id="contact" class="content-section">
+
+                <div class="terminal-command">
+                    nadia@portfolio:~$ contact
+                </div>
+
+                <div class="terminal-output">
+
+                    <p>Email:</p>
+
+                    <a href="mailto:nadiacecil@protonmail.com">
+                        nadiacecil@protonmail.com
+                    </a>
+
+                    <br><br>
+
+                    <p>GitHub:</p>
+
+                    <a href="https://github.com/nadiacec054" target="_blank">
+                        github.com/nadiacec054
+                    </a>
+
+                    <br><br>
+
+                    <p>LinkedIn:</p>
+
+                    <a href="https://www.linkedin.com/in/nadia-cecil-2502162a7/" target="_blank">
+                        linkedin.com/in/nadia-cecil-2502162a7
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
     </div>
-  </section>
 
-  <section>
-    <h2>Projects</h2>
-
-    <div class="projects">
-
-      <div class="card">
-        <h3>Password Strength Checker</h3>
-        <p>
-          A security-focused project that checks password strength based on length,
-          character variety, and complexity rules. It gives users feedback to create
-          stronger and safer passwords.
-        </p>
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Cybersecurity</span>
-      </div>
-
-      <div class="card">
-        <h3>StegoSend</h3>
-        <p>
-          A steganography-based project that hides secret messages inside images and
-          allows users to decode hidden information. It explores data hiding, basic
-          encryption concepts, and secure communication.
-        </p>
-        <span class="tag">Python</span>
-        <span class="tag">Flask</span>
-        <span class="tag">Steganography</span>
-        <span class="tag">Encryption</span>
-      </div>
-
-      <div class="project-card">
-  <h2>ScanX 🔍</h2>
-
-  <p>
-    Web Vulnerability Scanner built using Flask that checks security headers
-    and identifies risks.
-  </p>
-
-  <p><b>Tech:</b> Flask, Python, HTML, CSS, HTTP Security Headers</p>
-
-  <div class="project-links">
-    <a href="https://scanx-b7tk.onrender.com" target="_blank" class="btn">
-      Live Demo
-    </a>
-
-    <a href="https://github.com/nadiacec054/scanX" target="_blank" class="btn">
-      GitHub
-    </a>
-  </div>
-
-  <p class="status">
-    <span class="dot"></span> Status: Live
-  </p>
-</div>
-
-    
-   
-
-      <div class="card coming">
-        <h3>AI Prediction / Recommendation Project</h3>
-        <p>
-          Coming soon. Planned project combining AI/ML concepts with prediction or
-          recommendation features.
-        </p>
-        <span class="tag">AI/ML</span>
-        <span class="tag">Coming Soon</span>
-      </div>
-
-    </div>
-  </section>
-
-  <section>
-    <h2>Coursework</h2>
-    <div class="about">
-      <p>
-        Relevant coursework includes Cyber Security, Cryptography, Digital Forensics,
-        Computer Networks, Operating Systems, Authentication, Access Control, Intrusion
-        Detection, Risk Management, and basic AI/ML through Computational Intelligence.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Nadia Cecil | Built with HTML & CSS</p>
-  </footer>
+    <script src="script.js"></script>
 
 </body>
 </html>
