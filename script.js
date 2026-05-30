@@ -13,6 +13,8 @@ let charIndex = 0;
 let isDeleting = false;
 
 function typeEffect() {
+  if (!typingText) return;
+
   const currentCommand = commands[commandIndex];
 
   if (isDeleting) {
