@@ -1,258 +1,42 @@
-// ==========================
-// BOOT ANIMATION
-// ==========================
+const typingText = document.getElementById("typing");
 
-const bootLines = [
-    "Initializing portfolio...",
-    "Loading projects...",
-    "Loading skills...",
-    "Loading coursework...",
-    "Establishing secure connection...",
-    "",
-    "Access Granted."
+const commands = [
+  "./start-portfolio",
+  "whoami",
+  "ls projects",
+  "skills --proof",
+  "contact"
 ];
 
-const bootText = document.getElementById("boot-text");
-const bootScreen = document.getElementById("boot-screen");
-const terminalContainer = document.getElementById("terminal-container");
+let commandIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-let bootIndex = 0;
+function typeEffect() {
+  const currentCommand = commands[commandIndex];
 
-function typeBootLine() {
+  if (isDeleting) {
+    typingText.textContent = currentCommand.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingText.textContent = currentCommand.substring(0, charIndex + 1);
+    charIndex++;
+  }
 
-    if (bootIndex >= bootLines.length) {
+  let speed = isDeleting ? 60 : 100;
 
-        setTimeout(() => {
+  if (!isDeleting && charIndex === currentCommand.length) {
+    speed = 1200;
+    isDeleting = true;
+  }
 
-            bootScreen.style.display = "none";
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    commandIndex = (commandIndex + 1) % commands.length;
+    speed = 400;
+  }
 
-            terminalContainer.classList.remove("hidden");
-
-            startTerminalTyping();
-
-        }, 800);
-
-        return;
-    }
-
-    let line = bootLines[bootIndex];
-    let charIndex = 0;
-
-    let interval = setInterval(() => {
-
-        if (charIndex < line.length) {
-
-            bootText.innerHTML += line.charAt(charIndex);
-
-            charIndex++;
-
-        } else {
-
-            clearInterval(interval);
-
-            bootText.innerHTML += "<br>";
-
-            bootIndex++;
-
-            setTimeout(typeBootLine, 250);
-
-        }
-
-    }, 30);
+  setTimeout(typeEffect, speed);
 }
 
-typeBootLine();
-
-// ==========================
-// TERMINAL INTRO TYPING
-// ==========================
-
-const typingLine = document.getElementById("typing-line");
-
-const introText =
-    " whoami";
-
-function startTerminalTyping() {
-
-    let index = 0;
-
-    let interval = setInterval(() => {
-
-        if (index < introText.length) {
-
-            typingLine.textContent += introText.charAt(index);
-
-            index++;
-
-        } else {
-
-            clearInterval(interval);
-
-            setTimeout(() => {
-
-                document
-                    .getElementById("intro")
-                    .classList.remove("hidden-section");
-
-                document
-                    .getElementById("intro")
-                    .classList.add("show");
-
-            }, 300);
-
-        }
-
-    }, 80);
-}
-
-// ==========================
-// SECTION SCROLLING
-// ==========================
-
-function showSection(sectionId) {
-
-    const section = document.getElementById(sectionId);
-
-    section.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-    section.style.boxShadow =
-        "0 0 20px rgba(0,255,65,0.35)";
-
-    setTimeout(() => {
-
-        section.style.boxShadow = "none";
-
-    }, 1200);
-}
-
-// ==========================
-// PROJECT CARD ANIMATION
-// ==========================
-
-const cards = document.querySelectorAll(".project-card");
-
-const observer = new IntersectionObserver(
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-
-                entry.target.style.transform =
-                    "translateY(0px)";
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-cards.forEach(card => {
-
-    card.style.opacity = "0";
-
-    card.style.transform = "translateY(20px)";
-
-    card.style.transition =
-        "all 0.6s ease";
-
-    observer.observe(card);
-
-});
-
-// ==========================
-// SECTION FADE IN
-// ==========================
-
-const sections =
-    document.querySelectorAll(".content-section");
-
-const sectionObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.style.opacity = "1";
-
-                    entry.target.style.transform =
-                        "translateY(0px)";
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.1
-        }
-    );
-
-sections.forEach(section => {
-
-    section.style.opacity = "0";
-
-    section.style.transform =
-        "translateY(20px)";
-
-    section.style.transition =
-        "all 0.8s ease";
-
-    sectionObserver.observe(section);
-
-});
-
-// ==========================
-// CURSOR BLINK ENHANCEMENT
-// ==========================
-
-setInterval(() => {
-
-    const cursor =
-        document.querySelector(".cursor");
-
-    if (cursor) {
-
-        cursor.style.opacity =
-            cursor.style.opacity === "0"
-                ? "1"
-                : "0";
-
-    }
-
-}, 500);
-
-// ==========================
-// CONSOLE EASTER EGG
-// ==========================
-
-console.log(`
-=========================================
-Nadia Cecil Portfolio
-Cybersecurity Student
-=========================================
-
-Available Commands:
-
-about
-skills
-projects
-coursework
-contact
-
-ScanX Live:
-https://scanx-b7tk.onrender.com
-
-=========================================
-`);
+document.addEventListener("DOMContentLoaded", typeEffect);
