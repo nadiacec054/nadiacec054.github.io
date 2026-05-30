@@ -3,337 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadia Cecil | Cybersecurity Portfolio</title>
-
+    <title>Nadia Cecil</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Boot Screen -->
-    <div id="boot-screen">
-        <div id="boot-text"></div>
+<div class="terminal">
+
+    <div class="header">
+        <span class="green">nadia@portfolio</span>:<span class="blue">~</span>$ <span id="typing"></span><span class="cursor">█</span>
     </div>
 
-    <!-- Main Terminal -->
-    <div id="terminal-container" class="hidden">
-
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="red"></span>
-                <span class="yellow"></span>
-                <span class="green"></span>
-            </div>
-
-            <div class="terminal-title">
-                nadia@portfolio:~
-            </div>
-        </div>
-
-        <div class="terminal-body">
-
-            <div class="hero">
-
-                <div class="prompt">
-                    <span class="green-text">nadia@portfolio:~$</span>
-                    <span id="typing-line"></span>
-                    <span class="cursor">█</span>
-                </div>
-
-                <div class="intro hidden-section" id="intro">
-
-                    <h1>Nadia Cecil</h1>
-
-                    <p>
-                        Cybersecurity Student • Python Developer • Security Enthusiast
-                    </p>
-
-                    <div class="command-buttons">
-
-                        <button onclick="showSection('about')">
-                            about
-                        </button>
-
-                        <button onclick="showSection('skills')">
-                            skills
-                        </button>
-
-                        <button onclick="showSection('projects')">
-                            projects
-                        </button>
-
-                        <button onclick="showSection('coursework')">
-                            coursework
-                        </button>
-
-                        <button onclick="showSection('contact')">
-                            contact
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- ABOUT -->
-
-            <section id="about" class="content-section">
-
-                <div class="terminal-command">
-                    nadia@portfolio:~$ about
-                </div>
-
-                <div class="terminal-output">
-
-                    <p>Name: Nadia Cecil</p>
-
-                    <p>
-                        Computer Science student specializing in Cyber Security.
-                    </p>
-
-                    <br>
-
-                    <p>Interests:</p>
-
-                    <ul>
-                        <li>Cybersecurity</li>
-                        <li>Digital Forensics</li>
-                        <li>Cryptography</li>
-                        <li>Web Security</li>
-                        <li>Python Development</li>
-                    </ul>
-
-                </div>
-
-            </section>
-
-            <!-- SKILLS -->
-
-            <section id="skills" class="content-section">
-
-                <div class="terminal-command">
-                    nadia@portfolio:~$ skills
-                </div>
-
-                <div class="terminal-output">
-
-                    <div class="skill-line">
-                        Python ██████████
-                    </div>
-
-                    <div class="skill-line">
-                        Java █████████
-                    </div>
-
-                    <div class="skill-line">
-                        Flask ████████
-                    </div>
-
-                    <div class="skill-line">
-                        SQL ███████
-                    </div>
-
-                    <div class="skill-line">
-                        Cybersecurity █████████
-                    </div>
-
-                    <div class="skill-line">
-                        Linux ███████
-                    </div>
-
-                    <div class="skill-line">
-                        Docker ██████
-                    </div>
-
-                    <div class="skill-line">
-                        Wireshark ████████
-                    </div>
-
-                    <div class="skill-line">
-                        Nmap ████████
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- PROJECTS -->
-
-            <section id="projects" class="content-section">
-
-                <div class="terminal-command">
-                    nadia@portfolio:~$ projects
-                </div>
-
-                <div class="terminal-output">
-
-                    <!-- SCANX -->
-
-                    <div class="project-card">
-
-                        <h3>ScanX</h3>
-
-                        <p>
-                            Web Vulnerability Assessment Platform
-                        </p>
-
-                        <ul>
-                            <li>Security Header Analysis</li>
-                            <li>HTTPS Validation</li>
-                            <li>Cookie Security Checks</li>
-                            <li>Risk Scoring</li>
-                            <li>PDF Report Generation</li>
-                        </ul>
-
-                        <div class="project-links">
-
-                            <a href="https://scanx-b7tk.onrender.com" target="_blank">
-                                Live Demo
-                            </a>
-
-                            <a href="https://github.com/nadiacec054/scanX" target="_blank">
-                                GitHub
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <!-- STEGOSEND -->
-
-                    <div class="project-card">
-
-                        <h3>StegoSend</h3>
-
-                        <p>
-                            Secure steganography application for hidden communication.
-                        </p>
-
-                        <div class="project-links">
-
-                            <a href="#">
-                                Live Demo
-                            </a>
-
-                            <a href="#">
-                                GitHub
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <!-- BLOCKCHAIN -->
-
-                    <div class="project-card">
-
-                        <h3>Blockchain Library Management</h3>
-
-                        <p>
-                            Blockchain-based library management system.
-                        </p>
-
-                        <div class="project-links">
-
-                            <a href="#">
-                                GitHub
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <!-- PASSWORD -->
-
-                    <div class="project-card">
-
-                        <h3>Password Strength Checker</h3>
-
-                        <p>
-                            Security-focused password analysis tool.
-                        </p>
-
-                        <div class="project-links">
-
-                            <a href="#">
-                                GitHub
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- COURSEWORK -->
-
-            <section id="coursework" class="content-section">
-
-                <div class="terminal-command">
-                    nadia@portfolio:~$ coursework
-                </div>
-
-                <div class="terminal-output">
-
-                    <ul>
-                        <li>Cyber Security</li>
-                        <li>Cryptography</li>
-                        <li>Digital Forensics</li>
-                        <li>Computer Networks</li>
-                        <li>Operating Systems</li>
-                        <li>Web Security</li>
-                        <li>Authentication & Access Control</li>
-                        <li>Computational Intelligence</li>
-                    </ul>
-
-                </div>
-
-            </section>
-
-            <!-- CONTACT -->
-
-            <section id="contact" class="content-section">
-
-                <div class="terminal-command">
-                    nadia@portfolio:~$ contact
-                </div>
-
-                <div class="terminal-output">
-
-                    <p>Email:</p>
-
-                    <a href="mailto:nadiacecil@protonmail.com">
-                        nadiacecil@protonmail.com
-                    </a>
-
-                    <br><br>
-
-                    <p>GitHub:</p>
-
-                    <a href="https://github.com/nadiacec054" target="_blank">
-                        github.com/nadiacec054
-                    </a>
-
-                    <br><br>
-
-                    <p>LinkedIn:</p>
-
-                    <a href="https://www.linkedin.com/in/nadia-cecil-2502162a7/" target="_blank">
-                        linkedin.com/in/nadia-cecil-2502162a7
-                    </a>
-
-                </div>
-
-            </section>
-
-        </div>
-
+    <br>
+
+    <div class="intro">
+<pre>
+╔══════════════════════════════════════════════╗
+║               NADIA CECIL                   ║
+║      Cybersecurity | Python Developer       ║
+╚══════════════════════════════════════════════╝
+</pre>
     </div>
 
-    <script src="script.js"></script>
+    <div class="section">
+        <p class="prompt">nadia@portfolio:~$ whoami</p>
+
+        <p>
+            Computer Science student passionate about cybersecurity,
+            vulnerability assessment, secure software development,
+            and Python-based security tools.
+        </p>
+
+        <p>
+            Currently building practical cybersecurity projects while
+            strengthening skills in networking, operating systems,
+            cryptography, and web security.
+        </p>
+    </div>
+
+    <br>
+
+    <div class="section">
+        <p class="prompt">nadia@portfolio:~$ help</p>
+
+        <ul class="commands">
+            <li><a href="#projects">projects</a> - View projects</li>
+            <li><a href="#skills">skills</a> - Technical skills</li>
+            <li><a href="resume.pdf" target="_blank">resume</a> - Download resume</li>
+            <li><a href="https://github.com/nadiacec054" target="_blank">github</a> - Open GitHub</li>
+            <li><a href="https://www.linkedin.com/in/nadia-cecil-2502162a7/" target="_blank">linkedin</a> - Open LinkedIn</li>
+            <li><a href="#contact">contact</a> - Contact info</li>
+        </ul>
+    </div>
+
+    <br>
+
+    <div id="projects" class="section">
+        <p class="prompt">nadia@portfolio:~$ projects</p>
+
+<pre>
+├── ScanX
+│   ├── Web Vulnerability Scanner
+│   ├── Security Header Analysis
+│   ├── URL Inspection
+│   └── Flask + Render Deployment
+│
+├── StegoSend
+│   ├── Secure Message Hiding
+│   ├── Image Steganography
+│   ├── Encryption Integration
+│   └── Flask Web Application
+│
+├── Password Strength Analyzer
+│   ├── Password Evaluation
+│   ├── Security Recommendations
+│   └── User-Friendly Interface
+│
+└── Library Management System
+    ├── Java
+    ├── SQLite
+    ├── Member Management
+    └── Book Management
+</pre>
+    </div>
+
+    <br>
+
+    <div id="skills" class="section">
+        <p class="prompt">nadia@portfolio:~$ skills</p>
+
+<pre>
+Programming
+├── Python
+│   ├── ScanX
+│   ├── StegoSend
+│   └── Password Strength Analyzer
+│
+├── Java
+│   └── Library Management System
+│
+└── SQL
+    └── SQLite Database Integration
+
+Cybersecurity
+├── Vulnerability Assessment
+├── Security Header Analysis
+├── Cryptography
+├── Nmap
+└── Wireshark
+
+Web Development
+├── Flask
+├── HTML
+├── CSS
+└── JavaScript
+
+Tools
+├── Git & GitHub
+├── Linux
+├── Render
+└── Docker (Learning)
+</pre>
+    </div>
+
+    <br>
+
+    <div id="contact" class="section">
+        <p class="prompt">nadia@portfolio:~$ contact</p>
+
+<pre>
+Email    : nadiacecil@gmail.com
+GitHub   : github.com/nadiacec054
+LinkedIn : linkedin.com/in/nadia-cecil-2502162a7
+</pre>
+    </div>
+
+    <br>
+
+    <div class="footer">
+        <p>
+            <span class="green">nadia@portfolio</span>:<span class="blue">~</span>$ _
+        </p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
