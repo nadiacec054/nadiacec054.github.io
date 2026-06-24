@@ -4,42 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nadia Cecil | Portfolio</title>
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- optional modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <main class="terminal">
 
+    <!-- HERO -->
     <header class="hero">
-      <p class="command">nadia@portfolio:~$ <span id="typing"></span><span class="cursor">|</span></p>
+      <p class="command">
+        nadia@portfolio:~$ <span id="typing"></span><span class="cursor">|</span>
+      </p>
 
       <h1>Nadia Cecil</h1>
-      <h2>Cybersecurity Student • Python Developer • Security Tool Builder</h2>
+
+      <h2>
+        Cybersecurity Student • Python Developer • Security Tool Builder
+      </h2>
 
       <p class="hero-text">
-        Computer Science student building security-focused projects, web tools,
-        and practical cybersecurity applications.
+        Computer Science student building cybersecurity tools, secure web apps,
+        and practical security-focused projects.
       </p>
 
       <div class="button-row">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="Nadia_Cecil_Resume.pdf" target="_blank">Nadia's Resume</a>
+        <a href="Nadia_Cecil_Resume.pdf" target="_blank">Resume</a>
         <a href="https://github.com/nadiacec054" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/nadia-cecil-2502162a7/" target="_blank">LinkedIn</a>
         <a href="#contact">Contact</a>
       </div>
     </header>
 
+    <!-- ABOUT -->
     <section id="about" class="section">
       <p class="command">nadia@portfolio:~$ whoami</p>
+
       <p>
-        I’m focused on cybersecurity, secure web development, vulnerability assessment,
-        and Python-based tools. I enjoy building projects that are practical, explainable,
-        and useful in real-world security scenarios.
+        I’m focused on cybersecurity, vulnerability analysis, and building practical
+        security tools using Python and web technologies. I like projects that are
+        explainable, useful, and real-world applicable.
       </p>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section">
       <p class="command">nadia@portfolio:~$ ls projects</p>
 
@@ -47,31 +63,21 @@
 
         <div class="card">
           <h3>ScanX</h3>
-          <p>
-            Web vulnerability scanner that checks URLs for security headers
-            and basic web security issues.
-          </p>
+          <p>Web vulnerability scanner for security headers and basic misconfigurations.</p>
           <div class="tags">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>Security Headers</span>
+            <span>Python</span><span>Flask</span><span>Security</span>
           </div>
           <div class="links">
-            <a href="https://scanx-b7tk.onrender.com/" target="_blank">Live Demo</a>
+            <a href="https://scanx-b7tk.onrender.com/" target="_blank">Live</a>
             <a href="https://github.com/nadiacec054/scanX" target="_blank">GitHub</a>
           </div>
         </div>
 
         <div class="card">
           <h3>StegoHide</h3>
-          <p>
-            Secure message hiding project using image steganography
-            and encryption concepts.
-          </p>
+          <p>Image steganography tool for secure message hiding and encryption concepts.</p>
           <div class="tags">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>Cryptography</span>
+            <span>Python</span><span>Cryptography</span>
           </div>
           <div class="links">
             <a href="https://github.com/nadiacec054/steganographydemo" target="_blank">GitHub</a>
@@ -79,15 +85,10 @@
         </div>
 
         <div class="card">
-          <h3>Blockchain-Based Secure Transaction System</h3>
-          <p>
-            Demonstrates blockchain concepts including block hashing,
-            chain validation, transaction integrity, and tamper detection.
-          </p>
+          <h3>Blockchain Secure System</h3>
+          <p>Blockchain simulation with hashing, validation, and tamper detection.</p>
           <div class="tags">
-            <span>Python</span>
-            <span>Blockchain</span>
-            <span>Hashing</span>
+            <span>Python</span><span>Blockchain</span>
           </div>
           <div class="links">
             <a href="https://github.com/nadiacec054/blockchainhash" target="_blank">GitHub</a>
@@ -96,14 +97,9 @@
 
         <div class="card">
           <h3>Library Management System</h3>
-          <p>
-            Full-stack Java web application with member and admin authentication,
-            SQLite database integration, and CRUD operations.
-          </p>
+          <p>Java + SQLite web app with authentication and CRUD operations.</p>
           <div class="tags">
-            <span>Java</span>
-            <span>SQLite</span>
-            <span>JSP/Servlets</span>
+            <span>Java</span><span>SQL</span><span>JSP</span>
           </div>
           <div class="links">
             <a href="https://github.com/nadiacec054/LibraryManagement" target="_blank">GitHub</a>
@@ -113,6 +109,7 @@
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="section">
       <p class="command">nadia@portfolio:~$ skills --proof</p>
 
@@ -120,52 +117,36 @@
 
         <div class="skill-card">
           <h3>Python</h3>
-          <p>Used in ScanX, StegoHide, blockchain concepts, and security-focused project development.</p>
+          <p>Security tools, Flask apps, automation, and backend development.</p>
         </div>
 
         <div class="skill-card">
           <h3>Cybersecurity</h3>
-          <p>Worked with vulnerability checks, security headers, cryptography, Nmap, and Wireshark.</p>
+          <p>Vulnerability scanning, networking basics, Wireshark, Nmap.</p>
         </div>
 
         <div class="skill-card">
-          <h3>Web Development</h3>
-          <p>Built Flask and frontend projects using HTML, CSS, JavaScript, SQLite, and Render.</p>
+          <h3>Web Dev</h3>
+          <p>HTML, CSS, JS, Flask, SQLite-based full stack apps.</p>
         </div>
 
         <div class="skill-card">
           <h3>Java + SQL</h3>
-          <p>Used Java, SQLite, JSP, Servlets, and JDBC for database-driven web projects.</p>
+          <p>JSP, Servlets, JDBC, database-driven applications.</p>
         </div>
 
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <p class="command">nadia@portfolio:~$ contact</p>
 
       <div class="contact-box">
-        <p>
-          Email:
-          <a href="mailto:nadiacecil@gmail.com">nadiacecil@gmail.com</a>
-        </p>
-
-        <p>
-          GitHub:
-          <a href="https://github.com/nadiacec054" target="_blank">github.com/nadiacec054</a>
-        </p>
-
-        <p>
-          LinkedIn:
-          <a href="https://www.linkedin.com/in/nadia-cecil-2502162a7/" target="_blank">
-            linkedin.com/in/nadia-cecil-2502162a7
-          </a>
-        </p>
-
-        <p>
-          Resume:
-          <a href="Nadia_Cecil_Resume.pdf" target="_blank">Nadia's Resume</a>
-        </p>
+        <p>Email: <a href="mailto:nadiacecil@gmail.com">nadiacecil@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/nadiacec054">github.com/nadiacec054</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nadia-cecil-2502162a7/">Profile</a></p>
+        <p>Resume: <a href="Nadia_Cecil_Resume.pdf">Download</a></p>
       </div>
     </section>
 
