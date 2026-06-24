@@ -8,32 +8,59 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===== GLOBAL BACKGROUND ===== */
 body {
-  background: #020403;
-  color: #b6ffb6;
-  font-family: Consolas, "Courier New", monospace;
+  margin: 0;
+  color: #eaffea;
+  font-family: "Inter", system-ui, sans-serif;
   line-height: 1.6;
+
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 255, 140, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(0, 140, 255, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(180, 0, 255, 0.06),
+      transparent 50%
+    ),
+    #05070a;
 }
 
+/* ===== LINKS ===== */
 a {
   position: relative;
   z-index: 50;
   pointer-events: auto;
 }
 
+/* ===== MAIN GLASS CONTAINER ===== */
 .terminal {
   width: 90%;
   max-width: 1100px;
-  margin: 30px auto;
-  padding: 30px;
-  border: 1px solid #00ff66;
-  box-shadow: 0 0 25px rgba(0, 255, 102, 0.25);
-  background: #050805;
-  border-radius: 12px;
+  margin: 40px auto;
+  padding: 32px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+
   position: relative;
   z-index: 1;
 }
 
+/* ===== HERO ===== */
 .hero {
   min-height: 80vh;
   display: flex;
@@ -42,7 +69,7 @@ a {
 }
 
 .command {
-  color: #00ff66;
+  color: #4df0a6;
   margin-bottom: 20px;
   font-size: 1rem;
 }
@@ -52,33 +79,31 @@ a {
 }
 
 @keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-
-  51%, 100% {
-    opacity: 0;
-  }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
+/* ===== HEADINGS ===== */
 h1 {
   font-size: 4rem;
-  color: #00ff66;
-  text-shadow: 0 0 12px rgba(0, 255, 102, 0.7);
+  font-weight: 700;
+  color: #eaffea;
+  letter-spacing: -1px;
 }
 
 h2 {
-  color: #d6ffd6;
+  color: #cfe9da;
   margin-bottom: 20px;
   font-weight: normal;
 }
 
 .hero-text {
   max-width: 650px;
-  color: #a8dba8;
+  color: #b8c7c0;
   margin-bottom: 30px;
 }
 
+/* ===== BUTTONS ===== */
 .button-row,
 .links,
 .contact-box {
@@ -94,34 +119,41 @@ h2 {
 
 .button-row a,
 .links a {
-  color: #00ff66;
+  color: #eaffea;
   text-decoration: none;
-  border: 1px solid #00ff66;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
   padding: 10px 16px;
-  border-radius: 8px;
-  transition: 0.3s ease;
+  border-radius: 10px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s ease;
   display: inline-block;
-  background: transparent;
 }
 
 .button-row a:hover,
 .links a:hover {
-  background: #00ff66;
-  color: #020403;
-  box-shadow: 0 0 18px rgba(0, 255, 102, 0.8);
+  border-color: #4df0a6;
+  box-shadow: 0 0 20px rgba(77, 240, 166, 0.25);
+  transform: translateY(-2px);
 }
 
+/* ===== SECTIONS ===== */
 .section {
   padding: 50px 0;
-  border-top: 1px solid rgba(0, 255, 102, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   z-index: 2;
 }
 
 .section p {
-  color: #caffca;
+  color: #b8c7c0;
 }
 
+/* ===== GRID ===== */
 .card-grid,
 .skill-grid {
   display: grid;
@@ -129,32 +161,41 @@ h2 {
   gap: 18px;
 }
 
+/* ===== GLASS CARDS ===== */
 .card,
 .skill-card,
 .contact-box {
-  background: #071107;
-  border: 1px solid rgba(0, 255, 102, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 14px;
   padding: 22px;
-  border-radius: 12px;
-  box-shadow: 0 0 14px rgba(0, 255, 102, 0.12);
-  transition: 0.3s ease;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  transition: 0.25s ease;
   position: relative;
   z-index: 3;
 }
 
 .card:hover,
 .skill-card:hover {
-  transform: translateY(-5px);
-  border-color: #00ff66;
-  box-shadow: 0 0 20px rgba(0, 255, 102, 0.35);
+  transform: translateY(-6px);
+  border-color: rgba(77, 240, 166, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
+/* ===== CARD TEXT ===== */
 .card h3,
 .skill-card h3 {
-  color: #00ff66;
+  color: #4df0a6;
   margin-bottom: 10px;
 }
 
+/* ===== TAGS ===== */
 .tags {
   margin: 18px 0;
   display: flex;
@@ -163,13 +204,14 @@ h2 {
 }
 
 .tags span {
-  border: 1px solid rgba(0, 255, 102, 0.5);
-  color: #00ff66;
+  border: 1px solid rgba(77, 240, 166, 0.3);
+  color: #4df0a6;
   padding: 4px 8px;
   border-radius: 20px;
   font-size: 0.8rem;
 }
 
+/* ===== LINKS ===== */
 .links {
   display: flex;
   gap: 10px;
@@ -182,7 +224,7 @@ h2 {
 }
 
 .contact-box a {
-  color: #00ff66;
+  color: #4df0a6;
   text-decoration: none;
 }
 
@@ -190,6 +232,7 @@ h2 {
   text-decoration: underline;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 700px) {
   .terminal {
     width: 94%;
