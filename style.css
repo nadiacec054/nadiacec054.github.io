@@ -1,22 +1,33 @@
-/* =========================
-   VARIABLES
-========================= */
 
 :root {
+
   --background: #ffffff;
+
   --text: #111111;
+
   --muted: #6b6b6b;
+
   --border: #dedede;
-  --image-background: #f4f4f4;
+
+  --surface: #f5f5f5;
+
 }
 
+
 [data-theme="dark"] {
+
   --background: #111111;
+
   --text: #f2f2f2;
+
   --muted: #999999;
+
   --border: #303030;
-  --image-background: #191919;
+
+  --surface: #191919;
+
 }
+
 
 
 /* =========================
@@ -24,17 +35,27 @@
 ========================= */
 
 * {
+
   margin: 0;
+
   padding: 0;
+
   box-sizing: border-box;
+
 }
+
 
 html {
+
   scroll-behavior: smooth;
+
 }
 
+
 body {
+
   background: var(--background);
+
   color: var(--text);
 
   font-family:
@@ -49,12 +70,18 @@ body {
   transition:
     background-color 0.25s ease,
     color 0.25s ease;
+
 }
 
+
 a {
+
   color: inherit;
+
   text-decoration: none;
+
 }
+
 
 
 /* =========================
@@ -62,7 +89,9 @@ a {
 ========================= */
 
 .navbar {
+
   width: 100%;
+
   max-width: 1400px;
 
   margin: auto;
@@ -76,44 +105,69 @@ a {
   align-items: center;
 
   font-size: 13px;
+
 }
+
 
 .name {
+
   font-weight: 600;
+
 }
 
+
 .nav-center {
+
   display: flex;
+
   gap: 25px;
+
 }
+
 
 .nav-center a,
 .nav-right a {
+
   color: var(--muted);
 
   transition: color 0.2s ease;
+
 }
+
 
 .nav-center a:hover,
 .nav-right a:hover {
+
   color: var(--text);
+
 }
 
+
 .nav-right {
+
   display: flex;
+
   justify-content: flex-end;
+
   align-items: center;
 
   gap: 20px;
+
 }
 
+
+/* Dark mode button */
+
 #theme-toggle {
+
   width: 30px;
+
   height: 30px;
 
   border: 1px solid var(--border);
 
   background: transparent;
+
   color: var(--text);
 
   border-radius: 50%;
@@ -123,11 +177,16 @@ a {
   font-size: 13px;
 
   transition: background 0.2s ease;
+
 }
 
+
 #theme-toggle:hover {
-  background: var(--image-background);
+
+  background: var(--surface);
+
 }
+
 
 
 /* =========================
@@ -135,12 +194,15 @@ a {
 ========================= */
 
 main {
+
   max-width: 1400px;
 
   margin: auto;
 
   padding: 80px 45px 150px;
+
 }
+
 
 
 /* =========================
@@ -148,6 +210,7 @@ main {
 ========================= */
 
 .section-label {
+
   display: flex;
 
   gap: 18px;
@@ -167,11 +230,16 @@ main {
   text-transform: uppercase;
 
   letter-spacing: 0.08em;
+
 }
 
+
 .section-label span:first-child {
+
   opacity: 0.6;
+
 }
+
 
 
 /* =========================
@@ -179,6 +247,7 @@ main {
 ========================= */
 
 .project {
+
   display: grid;
 
   grid-template-columns: 0.75fr 1.4fr;
@@ -190,28 +259,37 @@ main {
   margin-bottom: 130px;
 
   border-bottom: 1px solid var(--border);
+
 }
 
+
 .project-info {
+
   display: flex;
 
   flex-direction: column;
 
   justify-content: space-between;
 
-  min-height: 450px;
+  min-height: 330px;
+
 }
 
+
 .project-number {
+
   font-size: 12px;
 
   color: var(--muted);
 
   margin-bottom: 18px;
+
 }
+
 
 .project h1,
 .project h2 {
+
   font-size: clamp(32px, 4vw, 52px);
 
   line-height: 1.05;
@@ -221,9 +299,12 @@ main {
   font-weight: 500;
 
   margin-bottom: 25px;
+
 }
 
+
 .project-description {
+
   max-width: 430px;
 
   color: var(--muted);
@@ -231,17 +312,30 @@ main {
   font-size: 15px;
 
   line-height: 1.8;
+
 }
 
+
+
+/* =========================
+   PROJECT LINKS
+========================= */
+
 .project-links {
+
   display: flex;
 
   gap: 25px;
 
+  flex-wrap: wrap;
+
   margin-top: 40px;
+
 }
 
+
 .project-links a {
+
   font-size: 13px;
 
   border-bottom: 1px solid var(--text);
@@ -249,56 +343,23 @@ main {
   padding-bottom: 3px;
 
   transition: opacity 0.2s ease;
+
 }
+
 
 .project-links a:hover {
+
   opacity: 0.5;
+
 }
+
 
 .project-links span {
+
   margin-left: 4px;
+
 }
 
-
-/* =========================
-   PROJECT IMAGE
-========================= */
-
-.project-image {
-  width: 100%;
-
-  aspect-ratio: 16 / 10;
-
-  background: var(--image-background);
-
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition: transform 0.5s ease;
-}
-
-.project-image:hover img {
-  transform: scale(1.015);
-}
-
-.placeholder-image {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  color: var(--muted);
-
-  font-size: 12px;
-}
 
 
 /* =========================
@@ -306,14 +367,21 @@ main {
 ========================= */
 
 .writing {
+
   margin-bottom: 180px;
+
 }
+
 
 .writing-list {
+
   border-top: 1px solid var(--border);
+
 }
 
+
 .writing-item {
+
   display: flex;
 
   justify-content: space-between;
@@ -327,13 +395,19 @@ main {
   border-bottom: 1px solid var(--border);
 
   transition: padding 0.25s ease;
+
 }
+
 
 .writing-item:hover {
+
   padding-left: 12px;
+
 }
 
+
 .writing-date {
+
   color: var(--muted);
 
   font-size: 11px;
@@ -343,21 +417,29 @@ main {
   letter-spacing: 0.06em;
 
   margin-bottom: 9px;
+
 }
 
+
 .writing-item h2 {
+
   font-size: 21px;
 
   font-weight: 450;
 
   letter-spacing: -0.025em;
+
 }
 
+
 .arrow {
+
   color: var(--muted);
 
   font-size: 18px;
+
 }
+
 
 
 /* =========================
@@ -365,14 +447,21 @@ main {
 ========================= */
 
 .about {
+
   margin-bottom: 180px;
+
 }
+
 
 .about-content {
+
   max-width: 700px;
+
 }
 
+
 .about-content p {
+
   color: var(--muted);
 
   font-size: 18px;
@@ -380,7 +469,9 @@ main {
   line-height: 1.9;
 
   margin-bottom: 25px;
+
 }
+
 
 
 /* =========================
@@ -388,20 +479,25 @@ main {
 ========================= */
 
 .contact {
+
   margin-bottom: 80px;
+
 }
 
+
 .contact-content {
+
   display: flex;
 
   justify-content: space-between;
 
   align-items: center;
 
-  padding-bottom: 20px;
 }
 
+
 .contact-content > a {
+
   font-size: clamp(20px, 3vw, 32px);
 
   letter-spacing: -0.035em;
@@ -409,9 +505,12 @@ main {
   border-bottom: 1px solid var(--text);
 
   padding-bottom: 4px;
+
 }
 
+
 .contact-links {
+
   display: flex;
 
   gap: 25px;
@@ -419,11 +518,16 @@ main {
   color: var(--muted);
 
   font-size: 13px;
+
 }
 
+
 .contact-links a:hover {
+
   color: var(--text);
+
 }
+
 
 
 /* =========================
@@ -431,6 +535,7 @@ main {
 ========================= */
 
 footer {
+
   max-width: 1400px;
 
   margin: auto;
@@ -442,7 +547,9 @@ footer {
   color: var(--muted);
 
   font-size: 11px;
+
 }
+
 
 
 /* =========================
@@ -451,30 +558,47 @@ footer {
 
 @media (max-width: 900px) {
 
+
   .navbar {
+
     grid-template-columns: 1fr auto;
 
     padding: 24px;
+
   }
+
 
   .nav-center {
+
     display: none;
+
   }
 
+
   .nav-right {
+
     gap: 14px;
+
   }
+
 
   .nav-right a:nth-child(1),
   .nav-right a:nth-child(2) {
+
     display: none;
+
   }
+
 
   main {
+
     padding: 60px 24px 100px;
+
   }
 
+
   .project {
+
     grid-template-columns: 1fr;
 
     gap: 45px;
@@ -482,72 +606,115 @@ footer {
     padding-bottom: 90px;
 
     margin-bottom: 90px;
+
   }
 
+
   .project-info {
+
     min-height: auto;
 
     gap: 50px;
+
   }
 
-  .project-image {
-    order: 2;
-  }
 
   .section-label {
+
     margin-bottom: 55px;
+
   }
+
 
   .writing {
+
     margin-bottom: 120px;
+
   }
+
 
   .about {
+
     margin-bottom: 120px;
+
   }
 
+
   .contact-content {
+
     flex-direction: column;
 
     align-items: flex-start;
 
     gap: 30px;
+
   }
 
+
   footer {
+
     padding: 25px 24px 40px;
+
   }
+
 }
 
 
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
 @media (max-width: 500px) {
 
+
   .navbar {
+
     padding: 20px;
+
   }
+
 
   .nav-right a:nth-child(3) {
+
     display: none;
+
   }
 
+
   main {
+
     padding: 45px 20px 80px;
+
   }
+
 
   .project h1,
   .project h2 {
+
     font-size: 34px;
+
   }
+
 
   .project-description {
+
     font-size: 14px;
+
   }
+
 
   .writing-item h2 {
+
     font-size: 18px;
+
   }
 
+
   .writing-item {
+
     padding: 25px 0;
+
   }
+
 }
