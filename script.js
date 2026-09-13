@@ -1,44 +1,47 @@
-const typingText = document.getElementById("typing");
+const toggle = document.getElementById("theme-toggle");
 
-const commands = [
-  "./start-portfolio",
-  "whoami",
-  "ls projects",
-  "skills --proof",
-  "contact"
-];
+const savedTheme = localStorage.getItem("theme");
 
-let commandIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+if (savedTheme) {
+  document.documentElement.setAttribute(
+    "data-theme",
+    savedTheme
+  );
 
-function typeEffect() {
-  if (!typingText) return;
-
-  const currentCommand = commands[commandIndex];
-
-  if (isDeleting) {
-    typingText.textContent = currentCommand.substring(0, charIndex - 1);
-    charIndex--;
-  } else {
-    typingText.textContent = currentCommand.substring(0, charIndex + 1);
-    charIndex++;
-  }
-
-  let speed = isDeleting ? 60 : 100;
-
-  if (!isDeleting && charIndex === currentCommand.length) {
-    speed = 1200;
-    isDeleting = true;
-  }
-
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    commandIndex = (commandIndex + 1) % commands.length;
-    speed = 400;
-  }
-
-  setTimeout(typeEffect, speed);
+  updateIcon(savedTheme);
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+
+toggle.addEventListener("click", () => {
+
+  const currentTheme =
+    document.documentElement.getAttribute("data-theme");
+
+  const newTheme =
+    currentTheme === "dark"
+      ? "light"
+      : "dark";
+
+  document.documentElement.setAttribute(
+    "data-theme",
+    newTheme
+  );
+
+  localStorage.setItem(
+    "theme",
+    newTheme
+  );
+
+  updateIcon(newTheme);
+});
+
+
+function updateIcon(theme) {
+
+  if (theme === "dark") {
+    toggle.textContent = "☀";
+  } else {
+    toggle.textContent = "◐";
+  }
+
+}
